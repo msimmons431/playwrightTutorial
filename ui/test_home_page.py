@@ -1,7 +1,9 @@
-import re, time
+import re
+import time
+
 from playwright.sync_api import Playwright, expect, sync_playwright
-from POM.test_home_page_obj_model import HomePageObjModel
-from POM.test_home_page_obj_model import DevelopmentPageObjModel
+
+from POM.test_home_page_obj_model import DevelopmentPageObjModel, HomePageObjModel
 
 
 def test_dev_page_obj_model(playwright: Playwright):
