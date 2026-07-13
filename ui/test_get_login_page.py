@@ -1,5 +1,7 @@
-from playwright.sync_api import Playwright, sync_playwright, expect
-from POM.test_home_page_obj_model import LoginPageObjModel as LoginPageObj, LoginPageObjModel
+from playwright.sync_api import Playwright, expect, sync_playwright
+
+from POM.test_home_page_obj_model import LoginPageObjModel
+from POM.test_home_page_obj_model import LoginPageObjModel as LoginPageObj
 
 
 def test_get_login_page_obj(playwright: Playwright):
