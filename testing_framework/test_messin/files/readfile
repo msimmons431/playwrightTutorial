@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Aark",
+    "age": 61,
+    "likes": [
+      "hiking",
+      "snakes",
+      "biking"
+    ]
+  },
+  {
+    "name": "Bark",
+    "age": 62,
+    "likes": [
+      "one",
+      "two",
+      "three"
+    ]
+  },
+  {
+    "name": "Cark",
+    "age": 63,
+    "likes": [
+      "one",
+      "two",
+      "snakes"
+    ]
+  }
+]
