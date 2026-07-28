@@ -1,6 +1,5 @@
 from playwright.sync_api import Playwright, expect, sync_playwright
 
-from POM.test_home_page_obj_model import LoginPageObjModel
 from POM.test_home_page_obj_model import LoginPageObjModel as LoginPageObj
 
 
