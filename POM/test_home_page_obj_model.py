@@ -19,6 +19,7 @@ class LoginPageObjModel():
         self.page = page
 
     def login_and_return_page(self) -> playwright.Page:
+        self.page.get_by_test_id("handle-button").vis
         self.page.get_by_test_id("handle-button").click()
         self.page.get_by_test_id("signUp.switchToSignUp").click()
         self.page.get_by_role("button", name="Log in with Email").click()
