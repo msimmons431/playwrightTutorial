@@ -5,13 +5,12 @@ from playwright.sync_api import Playwright, expect, sync_playwright
 
 
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False, slow_mo=1.0)
+    browser = playwright.chromium.launch(headless=False,slow_mo=999)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://symonstorozhenko.wixsite.com/website-1")
     #page.wait_for_load_state("networkidle")
     page.get_by_test_id("handle-button").click()
-    page.get_by_test_id("signUp.switchToSignUp").click()
     page.get_by_role("button", name="Log in with Email").click()
     page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").click()
     page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").fill("symon.storozhenko@gmail.com")
