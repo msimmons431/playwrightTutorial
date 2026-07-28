@@ -32,3 +32,10 @@ jobs:
       - name: Test with pytest
         run: |
           xvfb-run --auto-servernum pytest --headed  -sv .
+  deploy-or-report:
+    runs-on: ubuntu-latest
+    needs: test # This enforces the dependency rule
+    steps:
+      - name: Sync artifact or report status
+        run: echo "Pytest job passed successfully. Proceeding with deployment tasks..."
+
