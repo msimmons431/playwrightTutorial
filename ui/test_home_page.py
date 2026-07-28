@@ -7,7 +7,7 @@ from POM.test_home_page_obj_model import DevelopmentPageObjModel, HomePageObjMod
 
 
 def test_dev_page_obj_model(playwright: Playwright):
-    browser = playwright.chromium.launch()
+    browser = playwright.chromium.launch(headless=False, slow_mo=999)
     page = browser.new_page()
     page.goto("https://automationpanda.com/")
     dev_page_obj = DevelopmentPageObjModel(page)
@@ -28,7 +28,7 @@ def test_dev_page_obj_model(playwright: Playwright):
     print(f"\n\nJOIN TYPE {type(joinwords)}\n")
 
 def home_page_obj_model(playwright: Playwright):
-    browser = playwright.chromium.launch(headless=False,slow_mo=999)
+    browser = playwright.chromium.launch(headless=False, slow_mo=999)
     page = browser.new_page()
     page.goto("https://automationpanda.com/")
     home_page_obj = HomePageObjModel(page)
