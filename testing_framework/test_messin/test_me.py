@@ -26,13 +26,13 @@ class TestSetup:
 def test_four(return_a_random_string):
     print(f"Test four ( fixture from conftest ) The string: {return_a_random_string}")
 
-#def test_five(return_some_json_data):
-    #print(f"Test five ( fixture from conftest ) The dict {return_some_json_data}.")
-    #for k,v in return_some_json_data.items():
-        #if k == "likes":
-            #print(f"Printing v type: {type(v)}")
-    #snakes = { k: v for k,v in return_some_json_data.items() if k == "likes" if  "snakes" in v }
-    #print(f"Printing snakes: {snakes}")
+def test_five(return_some_json_data):
+    print(f"Test five ( fixture from conftest ) The dict {return_some_json_data}.")
+    for k,v in return_some_json_data.items():
+        if k == "likes":
+            print(f"Printing v type: {type(v)}")
+    snakes = { k: v for k,v in return_some_json_data.items() if k == "likes" if  "snakes" in v }
+    print(f"Printing snakes: {snakes}")
 
 def test_six():
     foo = [11,12,13,14,15,16,17,18,19,20]
