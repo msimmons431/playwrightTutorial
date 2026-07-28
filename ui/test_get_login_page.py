@@ -26,5 +26,5 @@ def test_get_login_page_obj(playwright: Playwright):
     page.get_by_role("textbox", name="Password").fill(password)
     page.get_by_test_id("submit").get_by_test_id("buttonElement").click()
     page.locator("body").press("Escape")
-    login_page.goto("https://symonstorozhenko.wixsite.com/website-1/account/my-account")
+    page.goto("https://symonstorozhenko.wixsite.com/website-1/account/my-account")
     expect(login_page.get_by_role("heading",name="symon.storozhenko"))
