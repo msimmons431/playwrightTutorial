@@ -20,7 +20,8 @@ class LoginPageObjModel():
 
     def login_and_return_page(self) -> playwright:
         self.page.get_by_test_id("handle-button").click()
-        self.page.get_by_test_id("signUp.switchToSignUp").click(timeout=10000)
+        self.page.wait_for_url("**/website-1/**",timeout=40000)
+        self.page.get_by_test_id("signUp.switchToSignUp").click()
         self.page.get_by_role("button", name="Log in with Email").click()
         self.page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").click()
         self.page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").fill(self.username)
