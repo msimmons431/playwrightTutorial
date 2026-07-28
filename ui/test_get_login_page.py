@@ -1,10 +1,11 @@
 from playwright.sync_api import Playwright, expect, sync_playwright
+import time
 
 from POM.test_home_page_obj_model import LoginPageObjModel
 from POM.test_home_page_obj_model import LoginPageObjModel as LoginPageObj
 
 
-async def test_get_login_page_obj(playwright: Playwright):
+def test_get_login_page_obj(playwright: Playwright):
     username="symon.storozhenko@gmail.com"
     password="test123"
     browser = playwright.chromium.launch(headless=True)
@@ -13,11 +14,11 @@ async def test_get_login_page_obj(playwright: Playwright):
     page.goto("https://symonstorozhenko.wixsite.com/website-1/")
     #login_page_obj = LoginPageObj(username,password,page)
     #login_page = login_page_obj.login_and_return_page()
-    #page.get_by_test_id("handle-button").click()
-    button = page.get_by_test_id("handle-button")
-    await expect(button).to_be_visible(timeout=15000)
-    await button.click()
+    time.sleep(5)
+    page.get_by_test_id("handle-button").click()
+    time.sleep(5)
     page.get_by_test_id("signUp.switchToSignUp").click()
+    time.sleep(5)
     page.get_by_role("button", name="Log in with Email").click()
     page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").click()
     page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").fill(self.username)
