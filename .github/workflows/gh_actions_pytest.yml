@@ -32,7 +32,7 @@ jobs:
       - name: Test with pytest
         run: |
           xvfb-run pytest --tracing on-first-retry -sv
-      - name: name: Upload Playwright Trace Artifacts
+      - name: Upload Playwright Trace Artifacts
         if: failure()
         uses: actions/upload-artifact@v4
         with:
