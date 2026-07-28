@@ -31,7 +31,7 @@ jobs:
       # Step 4 Run Tests
       - name: Test with pytest
         run: |
-          xvfb-run pytest --tracing on-first-retry -sv
+          xvfb-run pytest --tracing retain-on-failure -sv
       - name: Upload Playwright Trace Artifacts
         if: failure()
         uses: actions/upload-artifact@v4
