@@ -1,4 +1,5 @@
 import playwright
+import time
 
 
 class HomePageObjModel:
@@ -19,13 +20,20 @@ class LoginPageObjModel():
         self.page = page
 
     def login_and_return_page(self) -> playwright:
+        time.sleep(5)
         self.page.get_by_test_id("handle-button").click()
+        time.sleep(5)
         self.page.get_by_test_id("signUp.switchToSignUp").click()
+        time.sleep(5)
         self.page.get_by_role("button", name="Log in with Email").click()
+        time.sleep(5)
         self.page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").click()
+        time.sleep(5)
         self.page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").fill(self.username)
+        time.sleep(5)
         self.page.get_by_role("textbox", name="Password").click()
+        time.sleep(5)
         self.page.get_by_role("textbox", name="Password").fill(self.password)
+        time.sleep(5)
         self.page.get_by_test_id("submit").get_by_test_id("buttonElement").click()
-        self.page.locator("body").press("Escape")
         return self.page
