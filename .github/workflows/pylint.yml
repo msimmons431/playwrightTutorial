@@ -1,6 +1,6 @@
 name: Pylint
 
-on: [push]
+on: [push, workflow_dispatch]
 
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: 3.14
 
       - name: Install Python dependencies and run linters
         # Here you can use your own linter commands
