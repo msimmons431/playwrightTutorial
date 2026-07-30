@@ -4,18 +4,20 @@ import playwright
 
 
 class HomePageObjModel:
-    def __init__(self,page) -> None:
+    def __init__(self, page) -> None:
         self.page = page
         self.home_page = self.page.get_by_role("link", name="Home")
         self.email_text = self.page.get_by_text("Enter your email address to")
 
-class DevelopmentPageObjModel():
-    def __init__(self,page) -> None:
+
+class DevelopmentPageObjModel:
+    def __init__(self, page) -> None:
         self.page = page
         self.dev_page = page.get_by_role("link", name="Development", exact=True)
 
-class LoginPageObjModel():
-    def __init__(self,username,password,page) -> None:
+
+class LoginPageObjModel:
+    def __init__(self, username, password, page) -> None:
         self.username = username
         self.password = password
         self.page = page
@@ -28,9 +30,13 @@ class LoginPageObjModel():
         time.sleep(5)
         self.page.get_by_role("button", name="Log in with Email").click()
         time.sleep(5)
-        self.page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").click()
+        self.page.get_by_test_id("emailAuth").get_by_role(
+            "textbox", name="Email"
+        ).click()
         time.sleep(5)
-        self.page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").fill(self.username)
+        self.page.get_by_test_id("emailAuth").get_by_role("textbox", name="Email").fill(
+            self.username
+        )
         time.sleep(5)
         self.page.get_by_role("textbox", name="Password").click()
         time.sleep(5)

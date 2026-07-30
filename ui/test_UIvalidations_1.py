@@ -16,4 +16,3 @@ def test_UIValidationDynamicScript(page: Page):
     expect(page.get_by_text("Checkout ( 2 ) (current)")).to_be_visible()
     page.get_by_text("Checkout").click()
     expect(page.locator(".media-body")).to_have_count(2)
-

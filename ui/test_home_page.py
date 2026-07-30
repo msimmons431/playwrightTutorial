@@ -17,7 +17,7 @@ def test_dev_page_obj_model(playwright: Playwright):
     softdevpat = re.compile(r".*(Software development is a)\s.*")
     sftmatch = re.match(softdevpat, some_text)
     print(f"\n\nGROUP 1 {sftmatch.group(1)}\n")
-    sftrep = re.sub(softdevpat,"I like herping better", some_text)
+    sftrep = re.sub(softdevpat, "I like herping better", some_text)
     print(f"\n\nSUB {sftrep.strip()}\n")
     text = "Python is fun to learn"
     words = text.split()
@@ -25,6 +25,7 @@ def test_dev_page_obj_model(playwright: Playwright):
     joinwords = ":".join(words)
     print(f"\n\nJOIN {joinwords}\n")
     print(f"\n\nJOIN TYPE {type(joinwords)}\n")
+
 
 def home_page_obj_model(playwright: Playwright):
     browser = playwright.chromium.launch(headless=False, slow_mo=999)
@@ -40,4 +41,4 @@ def home_page_obj_model(playwright: Playwright):
     time.sleep(1)
     email_is_correct = emailpat.match(elem1)
     assert email_is_correct.group(1) == "your email"
-    #expect(home_page_obj.email_text).to_be_visible()
+    # expect(home_page_obj.email_text).to_be_visible()

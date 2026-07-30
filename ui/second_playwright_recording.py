@@ -4,10 +4,12 @@ from playwright.sync_api import Playwright, expect, sync_playwright
 
 
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False,slow_mo=900)
+    browser = playwright.chromium.launch(headless=False, slow_mo=900)
     context = browser.new_context()
     page = context.new_page()
-    page.goto("https://automationpanda.com/2021/12/29/want-to-practice-test-automation-try-these-demo-sites/")
+    page.goto(
+        "https://automationpanda.com/2021/12/29/want-to-practice-test-automation-try-these-demo-sites/"
+    )
     page.get_by_role("link", name="Home").click()
     page.get_by_role("link", name="About", exact=True).click()
     with page.expect_popup() as page1_info:
