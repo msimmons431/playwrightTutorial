@@ -1,4 +1,9 @@
-import pytest, random, string, json
+import json
+import random
+import string
+
+import pytest
+
 
 @pytest.fixture
 def return_a_random_string():

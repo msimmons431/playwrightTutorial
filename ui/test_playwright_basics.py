@@ -1,7 +1,10 @@
 # The class import Page has the fixture page. Add that import so the IDE
 # can display the methods in page.xxx
-from playwright.sync_api import Playwright, Page, expect, sync_playwright
-import re,time
+import re
+import time
+
+from playwright.sync_api import Page, Playwright, expect, sync_playwright
+
 
 # FYI: (playwright) in the function is a playwright pytest fixture.
 def test_playwrightBasics(playwright: Playwright):
