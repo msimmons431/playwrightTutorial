@@ -1,0 +1,35 @@
+name: generate animation
+
+on:
+  # allows to manually run the job at any time
+  workflow_dispatch:
+
+  # This is just an example for a cron job.
+  # run automatically every 24 hours
+  #schedule:
+  #  - cron: "0 */24 * * *" 
+
+  # This is just an example of having the action run on each push
+  # run on every push on the master branch
+  #push:
+  #  branches:
+  #  - master
+    
+  
+
+jobs:
+  generate:
+    permissions: 
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      # generates a snake game from a github user (<github_user_name>) contributions graph, output a svg animation at <svg_out_path>
+      - name: generate github-contribution-grid-snake.svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
