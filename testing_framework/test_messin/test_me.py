@@ -1,4 +1,7 @@
-import pytest, random
+import random
+
+import pytest
+
 
 class TestSetup:
     @classmethod

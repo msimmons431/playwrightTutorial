@@ -1,5 +1,6 @@
-import playwright
 import time
+
+import playwright
 
 
 class HomePageObjModel:

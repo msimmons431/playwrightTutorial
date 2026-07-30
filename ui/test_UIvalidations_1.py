@@ -1,4 +1,6 @@
 from playwright.sync_api import Page, expect
+
+
 def test_UIValidationDynamicScript(page: Page):
     page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     page.get_by_label("Username:").fill("rahulshettyacademy")

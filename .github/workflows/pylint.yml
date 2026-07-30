@@ -2,12 +2,39 @@ name: Pylint
 
 on: [push]
 
+
 jobs:
+
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install Python dependencies and run linters
+        # Here you can use your own linter commands
+        run: |
+          pip install black isort
+          black .
+          isort --profile black --sg="app/alembic/**"  .
+
+      - name: Run linters
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Applied automatic fixes from linters'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.8", "3.9", "3.10", "3.14"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
