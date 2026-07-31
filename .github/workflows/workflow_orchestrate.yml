@@ -5,11 +5,11 @@ on:
     branches:
       - main
 jobs:
-  call-workflow:
+  call-workflow1:
     uses: ./.github/workflows/workflow_1_pytest.yml
     with:
       environment: 'marktest'
 
-  call-workflow:
+  call-workflow2:
     uses: ./.github/workflows/workflow_2_test.yml
     environment: 'marktest'
