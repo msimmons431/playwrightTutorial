@@ -1,0 +1,14 @@
+name: workflow 2
+
+on:
+  workflow_run:
+    workflows: ["Run Pytest"] # Matches the 'name:' of the first workflow
+    types:
+      - completed
+
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo "The upstream CI workflow passed."
