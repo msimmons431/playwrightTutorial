@@ -6,8 +6,8 @@ on:
       - main
 jobs:
   run-first:
-    uses: ./.github/workflows/workflow_1_pytest.yml@main
+    uses: ./.github/workflows/workflow_1_pytest.yml
 
   run-seconds:
     needs: run-first
-    uses: ./.github/workflows/workflow_2_test.yml@main
+    uses: ./.github/workflows/workflow_2_test.yml
