@@ -4,7 +4,7 @@ on:
     inputs:
       environment:
         required: true
-        type: string
+        type: 'marktest'
 jobs:
   on-success:
     runs-on: ubuntu-latest
