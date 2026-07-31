@@ -1,10 +1,7 @@
 name: First Workflow
 on:
   workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: 'marktest'
+
 jobs:
   test:
     runs-on: ubuntu-latest
