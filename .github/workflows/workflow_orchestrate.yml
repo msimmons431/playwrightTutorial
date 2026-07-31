@@ -11,4 +11,3 @@ jobs:
   call-workflow2:
     needs: call-workflow1
     uses: ./.github/workflows/workflow_2_test.yml
-    environment: 'marktest'
