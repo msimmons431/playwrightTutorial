@@ -1,11 +1,10 @@
 name: Second Workflow
-
 on:
-  workflow_run:
-    workflows: ["First Workflow"] # Matches the 'name:' of the first workflow
-    types:
-      - completed
-
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
 jobs:
   on-success:
     runs-on: ubuntu-latest
